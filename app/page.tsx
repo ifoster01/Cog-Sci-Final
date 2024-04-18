@@ -9,7 +9,7 @@ export default async function Index() {
 
       {/* Body content */}
       <div className="w-full px-[25%] text-center">
-        <h1 className="mt-[15%] 2xl:mt-[25%] mb-8 text-6xl font-bold">Welcome to the<br/><span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Cognitive Science Quiz App</span></h1>
+        <h1 className="mt-[10%] 2xl:mt-[25%] mb-8 text-6xl font-bold">Welcome to the<br/><span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Cognitive Science Quiz App</span></h1>
         <h2 className="text-2xl">
           The Cognitive Science Quiz App offers an immersive experience in exploring key concepts of cognitive science through an interactive quiz format
         </h2>

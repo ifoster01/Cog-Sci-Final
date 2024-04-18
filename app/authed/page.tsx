@@ -5,7 +5,7 @@ import { getQuiz, getUser, getLeaders } from './(server)/Actions'
 import { useSessionStore } from "./AuthContext";
 // components
 import Slider from "./(components)/Slider"
-import Dashboard from "./(components)/Dashboard"
+import Add from "./(components)/Add"
 import Quizzes from "./(components)/Quizzes"
 import Scores from "./(components)/Scores"
 import Leaderboard from "./(components)/Leaderboard";
@@ -35,13 +35,13 @@ export default function Authed() {
 
     return (
         <div className="">
-            <h1 className="text-4xl font-bold text-center mt-4">
+            <h1 className="text-2xl 2xl:text-4xl font-bold text-center mt-2 2xl:mt-4">
                 Welcome to the Cognitive Science Quiz App, {user.user_metadata.firstname}!
             </h1>
-    
+
             <Slider props={{ activePage, setActivePage }} />
 
-            {activePage === "dashboard" && <Dashboard user={user} />}
+            {activePage === "add" && <Add user={user} />}
             {activePage === "quizzes" && <Quizzes props={{ userData, setUserData, quizData, setQuizData, getLeaders, setLeaderData }} />}
             {activePage === "scores" && <Scores props={{ userData }} />}
             {activePage === "leaderboard" && <Leaderboard props={{ leaderData }} />}

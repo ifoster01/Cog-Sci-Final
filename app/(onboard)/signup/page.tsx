@@ -45,6 +45,7 @@ export default function SignUp({
     .insert([{
       id: user?.user?.id,
       correct: 0,
+      incorrect: 0,
       total: 0,
       question_num: 0,
       first_name: firstname,

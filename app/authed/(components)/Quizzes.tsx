@@ -13,6 +13,12 @@ export default function Quizzes({ props }: { props: any }) {
         const formData = new FormData(e.target);
         const answer = formData.get("quiz") as string;
 
+        if (answer === correct) {
+            toast.success("Correct!")
+        } else {
+            toast.error("Incorrect!")
+        }
+
         const resData = await updateQuiz(props.userData, qid, answer === correct)
         props.setQuizData((resData as any).quizData);
         props.setUserData((resData as any).userData);
