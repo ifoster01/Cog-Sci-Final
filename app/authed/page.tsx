@@ -1,6 +1,6 @@
 "use client"
 import { useEffect, useState } from 'react'
-import { getQuiz, getUser, getLeaders } from './(server)/getData'
+import { getQuiz, getUser, getLeaders } from './(server)/Actions'
 // store
 import { useSessionStore } from "./AuthContext";
 // components
@@ -42,9 +42,9 @@ export default function Authed() {
             <Slider props={{ activePage, setActivePage }} />
 
             {activePage === "dashboard" && <Dashboard user={user} />}
-            {activePage === "quizzes" && <Quizzes props={{ user, quizData }} />}
-            {activePage === "scores" && <Scores props={{ user, userData }} />}
-            {activePage === "leaderboard" && <Leaderboard props={{ user, leaderData }} />}
+            {activePage === "quizzes" && <Quizzes props={{ userData, setUserData, quizData, setQuizData, getLeaders, setLeaderData }} />}
+            {activePage === "scores" && <Scores props={{ userData }} />}
+            {activePage === "leaderboard" && <Leaderboard props={{ leaderData }} />}
         </div>
     )
 }

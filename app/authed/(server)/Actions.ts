@@ -34,6 +34,50 @@ export const getQuiz = async ( uid: string ) => {
     });
 }
 
+export const updateQuiz = async ( user: any, qid: number, correct: boolean ) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const supabase = createClient();
+    
+            const { data: userData, error: userError } = await supabase
+            .from('users')
+            .update({
+                correct: correct ? user.correct + 1 : user.correct,
+                incorrect: correct ? user.incorrect : user.incorrect + 1,
+                total: user.total + 1,
+                question_num: qid
+            })
+            .eq('id', user.id)
+            .select('*')
+            .single()
+
+            if (userError) {
+                console.log(userError)
+            }
+
+            const { data: quizData, error: quizError } = await supabase
+            .from('questions')
+            .select('*')
+            .gt('id', userData.question_num)
+
+            if (quizError) {
+                console.log(quizError)
+            }
+
+            // construct response data
+            const resData = {
+                userData,
+                quizData
+            }
+
+            resolve(resData)
+        } catch (error) {
+            console.log(error)
+            reject(error)
+        }
+    });
+}
+
 export const getUser = async ( uid: string ) => {
     return new Promise(async (resolve, reject) => {
         try {
