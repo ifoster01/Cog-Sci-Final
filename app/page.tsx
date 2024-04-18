@@ -5,7 +5,7 @@ import Header from '../components/Header';
 export default async function Index() {
   return (
     <div className="max-w-screen h-screen">
-      <Header />
+      <Header user={null} />
 
       {/* Body content */}
       <div className="w-full px-[25%] text-center">

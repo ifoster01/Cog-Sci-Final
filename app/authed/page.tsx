@@ -1,5 +1,6 @@
 "use client"
-import { useState } from "react"
+import { useEffect, useState } from 'react'
+import { getQuiz, getUser, getLeaders } from './(server)/getData'
 // store
 import { useSessionStore } from "./AuthContext";
 // components
@@ -11,8 +12,26 @@ import Leaderboard from "./(components)/Leaderboard";
 
 export default function Authed() {
     const user = useSessionStore((state) => state.session);
-
     const [activePage, setActivePage] = useState("dashboard");
+
+    const [quizData, setQuizData] = useState<any>(null)
+    const [userData, setUserData] = useState<any>(null)
+    const [leaderData, setLeaderData] = useState<any>(null)
+
+    useEffect(() => {
+        getQuiz(user.id).then((res) => {
+            setQuizData(res)
+        })
+
+        getUser(user.id).then((res) => {
+            setUserData(res)
+        })
+
+        getLeaders().then((res) => {
+            setLeaderData(res)
+        })
+    }, [])
+
 
     return (
         <div className="">
@@ -23,9 +42,9 @@ export default function Authed() {
             <Slider props={{ activePage, setActivePage }} />
 
             {activePage === "dashboard" && <Dashboard user={user} />}
-            {activePage === "quizzes" && <Quizzes user={user} />}
-            {activePage === "scores" && <Scores user={user} />}
-            {activePage === "leaderboard" && <Leaderboard user={user} />}
+            {activePage === "quizzes" && <Quizzes props={{ user, quizData }} />}
+            {activePage === "scores" && <Scores props={{ user, userData }} />}
+            {activePage === "leaderboard" && <Leaderboard props={{ user, leaderData }} />}
         </div>
     )
 }
