@@ -46,7 +46,9 @@ export default function SignUp({
       id: user?.user?.id,
       correct: 0,
       total: 0,
-      question_num: 0
+      question_num: 0,
+      first_name: firstname,
+      last_name: lastname
     }]);
 
     return redirect("/authed");
