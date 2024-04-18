@@ -1,0 +1,530 @@
+[
+    {
+        "question": "Which area of the brain is primarily responsible for memory formation?",
+        "A": "Hippocampus",
+        "B": "Cerebellum",
+        "C": "Frontal lobe",
+        "D": "Occipital lobe",
+        "answer": "A"
+    },
+    {
+        "question": "What term refers to the ability to maintain attention on a task over a prolonged period?",
+        "A": "Working memory",
+        "B": "Selective attention",
+        "C": "Sustained attention",
+        "D": "Divided attention",
+        "answer": "C"
+    },
+    {
+        "question": "What theory suggests that we forget information because we don't use it and it decays over time?",
+        "A": "Decay theory",
+        "B": "Interference theory",
+        "C": "Encoding specificity principle",
+        "D": "Retrieval failure theory",
+        "answer": "A"
+    },
+    {
+        "question": "Which cognitive bias involves overestimating the likelihood of events that have recently occurred?",
+        "A": "Availability heuristic",
+        "B": "Representativeness heuristic",
+        "C": "Recency effect",
+        "D": "Anchoring bias",
+        "answer": "C"
+    },
+    {
+        "question": "What term describes the tendency to remember the first items in a list more easily?",
+        "A": "Primacy effect",
+        "B": "Recency effect",
+        "C": "Serial position effect",
+        "D": "Spacing effect",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the theory of multiple intelligences, suggesting that there are distinct types of intelligence?",
+        "A": "Howard Gardner",
+        "B": "Alfred Binet",
+        "C": "Jean Piaget",
+        "D": "Lev Vygotsky",
+        "answer": "A"
+    },
+    {
+        "question": "Which neurotransmitter is associated with feelings of pleasure and reward?",
+        "A": "Serotonin",
+        "B": "Dopamine",
+        "C": "Acetylcholine",
+        "D": "GABA",
+        "answer": "B"
+    },
+    {
+        "question": "What term refers to the phenomenon where people are unable to remember events occurring before the age of three?",
+        "A": "Infantile amnesia",
+        "B": "Source amnesia",
+        "C": "Retrograde amnesia",
+        "D": "Anterograde amnesia",
+        "answer": "A"
+    },
+    {
+        "question": "Which part of the brain is responsible for processing visual information?",
+        "A": "Temporal lobe",
+        "B": "Parietal lobe",
+        "C": "Occipital lobe",
+        "D": "Frontal lobe",
+        "answer": "C"
+    },
+    {
+        "question": "What type of memory refers to our ability to remember events and experiences from our past?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Declarative memory",
+        "answer": "C"
+    },
+    {
+        "question": "Who proposed the concept of operant conditioning, emphasizing the role of reinforcement in behavior?",
+        "A": "B.F. Skinner",
+        "B": "Ivan Pavlov",
+        "C": "Albert Bandura",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term describes the tendency to attribute our successes to internal factors and our failures to external factors?",
+        "A": "Self-serving bias",
+        "B": "Fundamental attribution error",
+        "C": "Confirmation bias",
+        "D": "Actor-observer bias",
+        "answer": "A"
+    },
+    {
+        "question": "What type of memory allows us to remember how to perform tasks like riding a bike or tying shoelaces?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Working memory",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the social learning theory, emphasizing the role of observational learning and modeling in behavior?",
+        "A": "Albert Bandura",
+        "B": "B.F. Skinner",
+        "C": "Ivan Pavlov",
+        "D": "Abraham Maslow",
+        "answer": "A"
+    },
+    {
+        "question": "What term refers to the tendency to search for, interpret, or prioritize information that confirms our existing beliefs?",
+        "A": "Confirmation bias",
+        "B": "Availability heuristic",
+        "C": "Anchoring bias",
+        "D": "Representativeness heuristic",
+        "answer": "A"
+    },
+    {
+        "question": "Which cognitive ability involves the capacity to think abstractly, reason logically, and solve problems effectively?",
+        "A": "Emotional intelligence",
+        "B": "Fluid intelligence",
+        "C": "Crystallized intelligence",
+        "D": "Social intelligence",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the concept of classical conditioning, demonstrating how associations are formed between stimuli?",
+        "A": "Ivan Pavlov",
+        "B": "B.F. Skinner",
+        "C": "Albert Bandura",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term describes the tendency to rely too heavily on the first piece of information encountered when making decisions?",
+        "A": "Confirmation bias",
+        "B": "Anchoring bias",
+        "C": "Availability heuristic",
+        "D": "Representativeness heuristic",
+        "answer": "B"
+    },
+    {
+        "question": "Which cognitive ability refers to the capacity to understand and manage one's own emotions and those of others?",
+        "A": "Fluid intelligence",
+        "B": "Emotional intelligence",
+        "C": "Social intelligence",
+        "D": "Crystallized intelligence",
+        "answer": "B"
+    },
+    {
+        "question": "What term describes the mental shortcuts or rules of thumb that we use to make judgments and decisions?",
+        "A": "Schemas",
+        "B": "Heuristics",
+        "C": "Prototypes",
+        "D": "Algorithms",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the theory of cognitive development, outlining stages of intellectual development from infancy to adulthood?",
+        "A": "Jean Piaget",
+        "B": "Lev Vygotsky",
+        "C": "Erik Erikson",
+        "D": "Lawrence Kohlberg",
+        "answer": "A"
+    },
+    {
+        "question": "What type of memory refers to our general knowledge about the world, including facts, concepts, and ideas?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Declarative memory",
+        "answer": "B"
+    },
+    {
+        "question": "What term describes the tendency to underestimate the duration of events that are pleasant or uneventful?",
+        "A": "Duration neglect",
+        "B": "Peak-end rule",
+        "C": "Fading affect bias",
+        "D": "Time dilation",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive bias involves the tendency to rely on the first piece of information encountered when making decisions?",
+        "A": "Confirmation bias",
+        "B": "Anchoring bias",
+        "C": "Availability heuristic",
+        "D": "Representativeness heuristic",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the theory of social cognitive learning, emphasizing the role of observational learning and self-efficacy?",
+        "A": "Albert Bandura",
+        "B": "B.F. Skinner",
+        "C": "Ivan Pavlov",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term describes the process of transforming sensory input into meaningful patterns?",
+        "A": "Perception",
+        "B": "Attention",
+        "C": "Sensation",
+        "D": "Cognition",
+        "answer": "A"
+    },
+    {
+        "question": "Which part of the brain is associated with language production and comprehension?",
+        "A": "Hippocampus",
+        "B": "Amygdala",
+        "C": "Broca's area",
+        "D": "Wernicke's area",
+        "answer": "D"
+    },
+    {
+        "question": "What term refers to our tendency to remember unfinished or interrupted tasks more than completed ones?",
+        "A": "Zeigarnik effect",
+        "B": "Primacy effect",
+        "C": "Recency effect",
+        "D": "Schemas",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the concept of emotional intelligence, suggesting that it involves self-awareness, self-regulation, and empathy?",
+        "A": "Daniel Goleman",
+        "B": "Howard Gardner",
+        "C": "Lev Vygotsky",
+        "D": "Abraham Maslow",
+        "answer": "A"
+    },
+    {
+        "question": "What type of memory refers to our ability to remember specific events and experiences from our lives?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Declarative memory",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive ability involves the capacity to solve problems and adapt to new situations?",
+        "A": "Emotional intelligence",
+        "B": "Fluid intelligence",
+        "C": "Crystallized intelligence",
+        "D": "Social intelligence",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the concept of self-efficacy, suggesting that it plays a key role in motivation and achievement?",
+        "A": "Albert Bandura",
+        "B": "B.F. Skinner",
+        "C": "Ivan Pavlov",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term refers to the process of maintaining information in memory over a short period of time?",
+        "A": "Working memory",
+        "B": "Long-term memory",
+        "C": "Short-term memory",
+        "D": "Sensory memory",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive bias involves the tendency to believe that a random sequence of events is somehow meaningful?",
+        "A": "Illusory correlation",
+        "B": "Gambler's fallacy",
+        "C": "Hindsight bias",
+        "D": "Magical thinking",
+        "answer": "D"
+    },
+    {
+        "question": "What term describes the mental process of organizing and interpreting sensory information?",
+        "A": "Perception",
+        "B": "Attention",
+        "C": "Sensation",
+        "D": "Cognition",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the concept of stages of moral development, suggesting that moral reasoning develops in a series of stages?",
+        "A": "Lawrence Kohlberg",
+        "B": "Jean Piaget",
+        "C": "Erik Erikson",
+        "D": "Lev Vygotsky",
+        "answer": "A"
+    },
+    {
+        "question": "What type of memory refers to our general knowledge about the world, including facts, concepts, and ideas?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Declarative memory",
+        "answer": "B"
+    },
+    {
+        "question": "What term describes the tendency to underestimate the duration of events that are pleasant or uneventful?",
+        "A": "Duration neglect",
+        "B": "Peak-end rule",
+        "C": "Fading affect bias",
+        "D": "Time dilation",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive bias involves the tendency to rely on the first piece of information encountered when making decisions?",
+        "A": "Confirmation bias",
+        "B": "Anchoring bias",
+        "C": "Availability heuristic",
+        "D": "Representativeness heuristic",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the theory of social cognitive learning, emphasizing the role of observational learning and self-efficacy?",
+        "A": "Albert Bandura",
+        "B": "B.F. Skinner",
+        "C": "Ivan Pavlov",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term describes the process of transforming sensory input into meaningful patterns?",
+        "A": "Perception",
+        "B": "Attention",
+        "C": "Sensation",
+        "D": "Cognition",
+        "answer": "A"
+    },
+    {
+        "question": "Which part of the brain is associated with language production and comprehension?",
+        "A": "Hippocampus",
+        "B": "Amygdala",
+        "C": "Broca's area",
+        "D": "Wernicke's area",
+        "answer": "D"
+    },
+    {
+        "question": "What term refers to our tendency to remember unfinished or interrupted tasks more than completed ones?",
+        "A": "Zeigarnik effect",
+        "B": "Primacy effect",
+        "C": "Recency effect",
+        "D": "Schemas",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the concept of emotional intelligence, suggesting that it involves self-awareness, self-regulation, and empathy?",
+        "A": "Daniel Goleman",
+        "B": "Howard Gardner",
+        "C": "Lev Vygotsky",
+        "D": "Abraham Maslow",
+        "answer": "A"
+    },
+    {
+        "question": "What type of memory refers to our ability to remember specific events and experiences from our lives?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Declarative memory",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive ability involves the capacity to solve problems and adapt to new situations?",
+        "A": "Emotional intelligence",
+        "B": "Fluid intelligence",
+        "C": "Crystallized intelligence",
+        "D": "Social intelligence",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the concept of self-efficacy, suggesting that it plays a key role in motivation and achievement?",
+        "A": "Albert Bandura",
+        "B": "B.F. Skinner",
+        "C": "Ivan Pavlov",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term refers to the process of maintaining information in memory over a short period of time?",
+        "A": "Working memory",
+        "B": "Long-term memory",
+        "C": "Short-term memory",
+        "D": "Sensory memory",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive bias involves the tendency to believe that a random sequence of events is somehow meaningful?",
+        "A": "Illusory correlation",
+        "B": "Gambler's fallacy",
+        "C": "Hindsight bias",
+        "D": "Magical thinking",
+        "answer": "D"
+    },
+    {
+        "question": "What term describes the mental process of organizing and interpreting sensory information?",
+        "A": "Perception",
+        "B": "Attention",
+        "C": "Sensation",
+        "D": "Cognition",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the concept of stages of moral development, suggesting that moral reasoning develops in a series of stages?",
+        "A": "Lawrence Kohlberg",
+        "B": "Jean Piaget",
+        "C": "Erik Erikson",
+        "D": "Lev Vygotsky",
+        "answer": "A"
+    },
+    {
+        "question": "What type of memory refers to our general knowledge about the world, including facts, concepts, and ideas?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Declarative memory",
+        "answer": "B"
+    },
+    {
+        "question": "What term describes the tendency to underestimate the duration of events that are pleasant or uneventful?",
+        "A": "Duration neglect",
+        "B": "Peak-end rule",
+        "C": "Fading affect bias",
+        "D": "Time dilation",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive bias involves the tendency to rely on the first piece of information encountered when making decisions?",
+        "A": "Confirmation bias",
+        "B": "Anchoring bias",
+        "C": "Availability heuristic",
+        "D": "Representativeness heuristic",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the theory of social cognitive learning, emphasizing the role of observational learning and self-efficacy?",
+        "A": "Albert Bandura",
+        "B": "B.F. Skinner",
+        "C": "Ivan Pavlov",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term describes the process of transforming sensory input into meaningful patterns?",
+        "A": "Perception",
+        "B": "Attention",
+        "C": "Sensation",
+        "D": "Cognition",
+        "answer": "A"
+    },
+    {
+        "question": "Which part of the brain is associated with language production and comprehension?",
+        "A": "Hippocampus",
+        "B": "Amygdala",
+        "C": "Broca's area",
+        "D": "Wernicke's area",
+        "answer": "D"
+    },
+    {
+        "question": "What term refers to our tendency to remember unfinished or interrupted tasks more than completed ones?",
+        "A": "Zeigarnik effect",
+        "B": "Primacy effect",
+        "C": "Recency effect",
+        "D": "Schemas",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the concept of emotional intelligence, suggesting that it involves self-awareness, self-regulation, and empathy?",
+        "A": "Daniel Goleman",
+        "B": "Howard Gardner",
+        "C": "Lev Vygotsky",
+        "D": "Abraham Maslow",
+        "answer": "A"
+    },
+    {
+        "question": "What type of memory refers to our ability to remember specific events and experiences from our lives?",
+        "A": "Procedural memory",
+        "B": "Semantic memory",
+        "C": "Episodic memory",
+        "D": "Declarative memory",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive ability involves the capacity to solve problems and adapt to new situations?",
+        "A": "Emotional intelligence",
+        "B": "Fluid intelligence",
+        "C": "Crystallized intelligence",
+        "D": "Social intelligence",
+        "answer": "B"
+    },
+    {
+        "question": "Who proposed the concept of self-efficacy, suggesting that it plays a key role in motivation and achievement?",
+        "A": "Albert Bandura",
+        "B": "B.F. Skinner",
+        "C": "Ivan Pavlov",
+        "D": "John Watson",
+        "answer": "A"
+    },
+    {
+        "question": "What term refers to the process of maintaining information in memory over a short period of time?",
+        "A": "Working memory",
+        "B": "Long-term memory",
+        "C": "Short-term memory",
+        "D": "Sensory memory",
+        "answer": "C"
+    },
+    {
+        "question": "Which cognitive bias involves the tendency to believe that a random sequence of events is somehow meaningful?",
+        "A": "Illusory correlation",
+        "B": "Gambler's fallacy",
+        "C": "Hindsight bias",
+        "D": "Magical thinking",
+        "answer": "D"
+    },
+    {
+        "question": "What term describes the mental process of organizing and interpreting sensory information?",
+        "A": "Perception",
+        "B": "Attention",
+        "C": "Sensation",
+        "D": "Cognition",
+        "answer": "A"
+    },
+    {
+        "question": "Who proposed the concept of stages of moral development, suggesting that moral reasoning develops in a series of stages?",
+        "A": "Lawrence Kohlberg",
+        "B": "Jean Piaget",
+        "C": "Erik Erikson",
+        "D": "Lev Vygotsky",
+        "answer": "A"
+    }
+]
