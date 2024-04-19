@@ -14,6 +14,10 @@ export default function Scores({ props }: { props: any }) {
                 <h1 className="text-2xl font-bold">Incorrect:</h1>
                 <p className="text-2xl">{props.userData.incorrect}</p>
             </div>
+            <div className="bg-yellow-50 p-4 rounded-md">
+                <h1 className="text-2xl font-bold">Total:</h1>
+                <p className="text-2xl">{props.userData.total}</p>
+            </div>
         </div>
     )
 }

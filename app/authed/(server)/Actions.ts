@@ -19,7 +19,7 @@ export const getQuiz = async ( uid: string ) => {
             const { data: qData, error } = await supabase
             .from('questions')
             .select('*')
-            .gt('id', userData.question_num + 1)
+            .gt('id', userData.question_num)
             .order('id', { ascending: true })
 
             if (error) {
@@ -71,6 +71,54 @@ export const updateQuiz = async ( user: any, qid: number, correct: boolean ) => 
             }
 
             resolve(resData)
+        } catch (error) {
+            console.log(error)
+            reject(error)
+        }
+    });
+}
+
+export const addQuestion = async ( question: string, type: string, a: string, b: string, c: string, d: string, answer: string ) => {
+    return new Promise(async (resolve, reject) => {
+        try {
+            const supabase = createClient();
+
+            let { data: quizData, error: quizError } = await supabase
+            .from('questions')
+            .select('id')
+            .order('id', { ascending: false })
+
+            if (quizError) {
+                console.log(quizError)
+            }
+
+            if (!quizData) {
+                quizData = [{ id: 0 }]
+            }
+            if (quizData.length === 0) {
+                quizData.push({ id: 0 })
+            }
+
+            const { data, error } = await supabase
+            .from('questions')
+            .insert([
+                {
+                    id: quizData && quizData[0].id + 1,
+                    question,
+                    type,
+                    a: type === "choice" ? a : "true",
+                    b: type === "choice" ? b : "false",
+                    c: type === "choice" ? c : null,
+                    d: type === "choice" ? d : null,
+                    answer
+                }
+            ])
+
+            if (error) {
+                console.log(error)
+            }
+
+            resolve(data)
         } catch (error) {
             console.log(error)
             reject(error)

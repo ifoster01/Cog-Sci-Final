@@ -1,22 +1,48 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { useQueryClient, useMutation } from '@tanstack/react-query';
+import { addQuestion } from '../(server)/Actions';
+import toast, { Toaster } from 'react-hot-toast';
 
-export default function Add({ user }: { user: any }) {
+export default function Add({ props }: { props: any }) {
+    const queryClient = useQueryClient();
+
     const [type, setType] = useState("")
     const [question, setQuestion] = useState("")
     const [a, setA] = useState("")
     const [b, setB] = useState("")
     const [c, setC] = useState("")
     const [d, setD] = useState("")
+    const [answer, setAnswer] = useState("")
 
-    const addQuestion = async () => {
+    const mutation = useMutation({
+        mutationFn: async () => {
+            await addQuestion(question, type, a, b, c, d, answer)
+            
+            setQuestion("")
+            setA("")
+            setB("")
+            setC("")
+            setD("")
+            setAnswer("")
+        },
+        onSuccess: async () => {
+            queryClient.invalidateQueries({ queryKey: [props.userData.id] });
 
+            toast.success("Question added successfully!")
+        }
+    })
+
+    const postQuestion = async (e: any) => {
+        e.preventDefault()
+
+        mutation.mutate()
     }
 
     return (
         <div className="w-[80%] mx-auto relative pt-10">
             <h1 className="text-2xl font-bold">Add Questions</h1>
-            <form onSubmit={addQuestion}>
+            <form onSubmit={postQuestion}>
                 <div className="grid grid-cols-2 mt-4 text-right">
                     <div className="flex items-center">
                         <h2 className="text-xl font-semibold">Question:</h2>
@@ -44,6 +70,7 @@ export default function Add({ user }: { user: any }) {
                     </div>
                 </div>
                 { type === "choice" &&
+                <>
                     <div className="mt-6 space-y-6">
                         <div className="flex items-center gap-x-3">
                             <label htmlFor="choice-a" className="block text-lg font-medium leading-6 text-gray-900">
@@ -102,16 +129,102 @@ export default function Add({ user }: { user: any }) {
                             />
                         </div>
                     </div>
+                    <h2 className='mt-6 text-2xl mb-4'>Please select the correct answer</h2>
+                    <div className="flex space-x-6">
+                        <div className="flex items-center gap-x-3">
+                            <label htmlFor="choice-a" className="block text-lg font-medium leading-6 text-gray-900">
+                                A)
+                            </label>
+                            <input
+                                type="radio"
+                                name="choice-ans"
+                                value="A"
+                                checked={answer === "A"}
+                                onChange={(e) => setAnswer(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="flex items-center gap-x-3">
+                            <label htmlFor="choice-a" className="block text-lg font-medium leading-6 text-gray-900">
+                                B)
+                            </label>
+                            <input
+                                type="radio"
+                                name="choice-ans"
+                                value="B"
+                                checked={answer === "B"}
+                                onChange={(e) => setAnswer(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="flex items-center gap-x-3">
+                            <label htmlFor="choice-a" className="block text-lg font-medium leading-6 text-gray-900">
+                                C)
+                            </label>
+                            <input
+                                type="radio"
+                                name="choice-ans"
+                                value="C"
+                                checked={answer === "C"}
+                                onChange={(e) => setAnswer(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="flex items-center gap-x-3">
+                            <label htmlFor="choice-a" className="block text-lg font-medium leading-6 text-gray-900">
+                                D)
+                            </label>
+                            <input
+                                type="radio"
+                                name="choice-ans"
+                                value="D"
+                                checked={answer === "D"}
+                                onChange={(e) => setAnswer(e.target.value)}
+                                required
+                            />
+                        </div>
+                    </div>
+                </>
                 }
                 { type === "tf" &&
-                    <div className="mt-6 text-2xl mb-24">
-                        True/False Selected!
+                <>
+                    <h2 className='mt-6 text-2xl mb-4'>Please select the correct answer</h2>
+                    <div className="mt-6 flex space-x-6">
+                        <div className="flex items-center gap-x-3">
+                            <label htmlFor="choice-a" className="block text-lg font-medium leading-6 text-gray-900">
+                                True
+                            </label>
+                            <input
+                                type="radio"
+                                name="tf-ans"
+                                value="true"
+                                checked={answer === "true"}
+                                onChange={(e) => setAnswer(e.target.value)}
+                                required
+                            />
+                        </div>
+                        <div className="flex items-center gap-x-3">
+                            <label htmlFor="choice-a" className="block text-lg font-medium leading-6 text-gray-900">
+                                False
+                            </label>
+                            <input
+                                type="radio"
+                                name="tf-ans"
+                                value="false"
+                                checked={answer === "false"}
+                                onChange={(e) => setAnswer(e.target.value)}
+                                required
+                            />
+                        </div>
                     </div>
+                </>
                 }
                 <button type="submit" className="mt-6 bg-blue-500 text-white p-2 rounded-md">
                     Add Question
                 </button>
             </form>
+
+            <Toaster />
         </div>
     )
 }

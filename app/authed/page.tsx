@@ -1,50 +1,69 @@
 "use client"
 import { useEffect, useState } from 'react'
 import { getQuiz, getUser, getLeaders } from './(server)/Actions'
+import { useQuery } from '@tanstack/react-query'
+import Image from 'next/image'
 // store
-import { useSessionStore } from "./AuthContext";
+import { useSessionStore } from "./AuthContext"
 // components
 import Slider from "./(components)/Slider"
 import Add from "./(components)/Add"
 import Quizzes from "./(components)/Quizzes"
 import Scores from "./(components)/Scores"
-import Leaderboard from "./(components)/Leaderboard";
+import Leaderboard from "./(components)/Leaderboard"
+// assets
+import Logo from "@/public/app.jpg"
 
 export default function Authed() {
     const user = useSessionStore((state) => state.session);
-    const [activePage, setActivePage] = useState("dashboard");
+    const [activePage, setActivePage] = useState("quizzes");
 
-    const [quizData, setQuizData] = useState<any>(null)
-    const [userData, setUserData] = useState<any>(null)
-    const [leaderData, setLeaderData] = useState<any>(null)
+    const getData = async () => {
+        const quizData = await getQuiz(user.id)
+        const userData = await getUser(user.id)
+        const leaderData = await getLeaders()
 
-    useEffect(() => {
-        getQuiz(user.id).then((res) => {
-            setQuizData(res)
-        })
+        return {
+            quizData,
+            userData,
+            leaderData
+        }
+    }
 
-        getUser(user.id).then((res) => {
-            setUserData(res)
-        })
+    // getting all required app data
+    const { isLoading, error, data: appData } = useQuery({
+        queryFn: () => getData(),
+        queryKey: [user.id]
+    })
 
-        getLeaders().then((res) => {
-            setLeaderData(res)
-        })
-    }, [])
+    if (error) {
+        console.log(error)
+    }
 
+    if (isLoading) {
+        return <div className="w-full max-w-screen h-screen">
+            <Image
+                src={Logo}
+                alt="Cognitive Science Quiz App"
+                width={200}
+                height={200}
+                className="animate-bounce mx-auto mt-[10%]"
+            />
+        </div>
+    }
 
     return (
         <div className="">
             <h1 className="text-2xl 2xl:text-4xl font-bold text-center mt-2 2xl:mt-4">
-                Welcome to the Cognitive Science Quiz App, {user.user_metadata.firstname}!
+                Welcome to the Cognitive Science Quiz App, {appData?.userData?.first_name}!
             </h1>
 
             <Slider props={{ activePage, setActivePage }} />
 
-            {activePage === "add" && <Add user={user} />}
-            {activePage === "quizzes" && <Quizzes props={{ userData, setUserData, quizData, setQuizData, getLeaders, setLeaderData }} />}
-            {activePage === "scores" && <Scores props={{ userData }} />}
-            {activePage === "leaderboard" && <Leaderboard props={{ leaderData }} />}
+            {activePage === "add" && <Add props={{ userData: appData?.userData }} />}
+            {activePage === "quizzes" && <Quizzes props={{ userData: appData?.userData, quizData: appData?.quizData }} />}
+            {activePage === "scores" && <Scores props={{ userData: appData?.userData }} />}
+            {activePage === "leaderboard" && <Leaderboard props={{ leaderData: appData?.leaderData }} />}
         </div>
     )
 }
