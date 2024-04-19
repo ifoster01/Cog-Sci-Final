@@ -14,8 +14,7 @@ export async function GET(request: Request) {
     await supabase.auth.exchangeCodeForSession(code);
   }
   
-  const url = new URL(request.url);
-  const login = url.searchParams.get('login');
+  const login = requestUrl.searchParams.get('login');
 
   if (login === "true") {
     return NextResponse.redirect(`${origin}/authed`);

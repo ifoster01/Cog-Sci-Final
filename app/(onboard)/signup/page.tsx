@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { headers } from "next/headers";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "../submit-button";
@@ -18,12 +17,11 @@ export default function SignUp({
     "use server";
 
     const supabase = createClient();
-    const origin = headers().get("origin");
 
     const { data, error } = await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${origin}/auth/callback?login=false`,
+        redirectTo: `${process.env.CALLBACK_URL}/auth/callback?login=false`,
       },
     });
 
@@ -37,7 +35,6 @@ export default function SignUp({
   const signUp = async (formData: FormData) => {
     "use server";
 
-    const origin = headers().get("origin");
     const firstname = formData.get("firstname") as string;
     const lastname = formData.get("lastname") as string;
     const email = formData.get("email") as string;
@@ -48,7 +45,7 @@ export default function SignUp({
       email,
       password,
       options: {
-        emailRedirectTo: `${origin}/auth/callback`,
+        emailRedirectTo: `${process.env.CALLBACK_URL}/auth/callback`,
         data: {
           firstname,
           lastname
