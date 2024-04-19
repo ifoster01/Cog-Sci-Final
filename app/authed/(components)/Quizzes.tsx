@@ -4,7 +4,7 @@ import { useQueryClient, useMutation } from '@tanstack/react-query';
 
 export default function Quizzes({ props }: { props: any }) {
     const queryClient = useQueryClient();
-    
+
     const mutation = useMutation({
         mutationFn: async ( quizData: any ) => {
             await updateQuiz(props.userData, quizData.qid, quizData.answer === quizData.correct)
@@ -13,7 +13,7 @@ export default function Quizzes({ props }: { props: any }) {
             queryClient.invalidateQueries({ queryKey: [props.userData.id] });
         }
     })
-    
+
     const handleUpdate = (qid: number, correct: string) => async (e: any) => {
         e.preventDefault()
 
