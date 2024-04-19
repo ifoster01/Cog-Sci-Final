@@ -7,7 +7,7 @@ export async function GET(request: Request) {
   // https://supabase.com/docs/guides/auth/server-side/nextjs
   const requestUrl = new URL(request.url);
   const code = requestUrl.searchParams.get("code");
-  const origin = requestUrl.origin;
+  // const origin = requestUrl.origin;
 
   if (code) {
     const supabase = createClient();
@@ -17,7 +17,7 @@ export async function GET(request: Request) {
   const login = requestUrl.searchParams.get('login');
 
   if (login === "true") {
-    return NextResponse.redirect(`${origin}/authed`);
+    return NextResponse.redirect(`${process.env.CALLBACK_URL}/authed`);
   }
 
   // If the user is signing up, create a new user in the database
@@ -25,7 +25,7 @@ export async function GET(request: Request) {
   const { data: user, error: error2 } = await supabase.auth.getUser();
 
   if (error2) {
-    return NextResponse.redirect(`${origin}/login`);
+    return NextResponse.redirect(`${process.env.CALLBACK_URL}/login`);
   }
 
   const { error: error3 } = await supabase
@@ -41,9 +41,9 @@ export async function GET(request: Request) {
   }]);
 
   if (error3) {
-    return NextResponse.redirect(`${origin}/login`);
+    return NextResponse.redirect(`${process.env.CALLBACK_URL}/login`);
   }
 
   // URL to redirect to after sign up process completes
-  return NextResponse.redirect(`${origin}/authed`);
+  return NextResponse.redirect(`${process.env.CALLBACK_URL}/authed`);
 }
