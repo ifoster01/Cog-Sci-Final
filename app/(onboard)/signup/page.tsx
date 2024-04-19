@@ -4,7 +4,6 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "../submit-button";
 import { PasswordInput } from "../password-input";
-import { GoogleSignIn } from "../google-signup";
 import Image from "next/image";
 
 import Logo from "@/public/app.jpg"
