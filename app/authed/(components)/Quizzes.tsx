@@ -48,7 +48,10 @@ export default function Quizzes({ props }: { props: any }) {
                 <div className="mt-8 2xl:mt-16 mx-auto max-w-2xl text-center">
                     <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">No more questions!</h2>
                     <p className="mt-6 text-lg leading-8 text-gray-600">
-                        You have completed all the questions. Check your score to see how you did or the leaderboard to see how you stack up against your peers. To keep playing, add more quiz questions under the "add questions" tab.
+                        You have completed all the questions! Check your score to see how you're doing or check the leaderboard to see how you stack up against your peers. To keep playing, add more quiz questions under the "add questions" tab.
+                    </p>
+                    <p className="mt-6 text-sm leading-8 text-gray-600">
+                        ** Please note: as this is a very new app, if you don't see your new questions, just refresh :) **
                     </p>
                 </div>
             }

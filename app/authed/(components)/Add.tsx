@@ -49,6 +49,7 @@ export default function Add({ props }: { props: any }) {
                         <input
                             type="text"
                             className="w-full border-2 border-gray-300 rounded-md p-1 ml-2"
+                            placeholder="Enter the question here..."
                             value={question}
                             onChange={(e) => setQuestion(e.target.value)}
                             required
@@ -79,7 +80,7 @@ export default function Add({ props }: { props: any }) {
                             <input
                                 type="text"
                                 name="choice-a"
-                                placeholder="Enter the option for A"
+                                placeholder="Enter the answer for A..."
                                 className="w-full border-2 border-gray-300 rounded-md p-1 ml-2"
                                 value={a}
                                 onChange={(e) => setA(e.target.value)}
@@ -93,7 +94,7 @@ export default function Add({ props }: { props: any }) {
                             <input
                                 type="text"
                                 name="choice-b"
-                                placeholder="Enter the option for B"
+                                placeholder="Enter the answer for B..."
                                 className="w-full border-2 border-gray-300 rounded-md p-1 ml-2"
                                 value={b}
                                 onChange={(e) => setB(e.target.value)}
@@ -107,7 +108,7 @@ export default function Add({ props }: { props: any }) {
                             <input
                                 type="text"
                                 name="choice-c"
-                                placeholder="Enter the option for C"
+                                placeholder="Enter the answer for C..."
                                 className="w-full border-2 border-gray-300 rounded-md p-1 ml-2"
                                 value={c}
                                 onChange={(e) => setC(e.target.value)}
@@ -121,7 +122,7 @@ export default function Add({ props }: { props: any }) {
                             <input
                                 type="text"
                                 name="choice-d"
-                                placeholder="Enter the option for D"
+                                placeholder="Enter the answer for D..."
                                 className="w-full border-2 border-gray-300 rounded-md p-1 ml-2"
                                 value={d}
                                 onChange={(e) => setD(e.target.value)}
