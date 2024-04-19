@@ -16,9 +16,6 @@ export async function GET(request: Request) {
   }
   
   const login = requestUrl.searchParams.get("login");
-  // const origin = headers().get("origin");
-
-  console.log(origin)
 
   if (login === "true") {
     return NextResponse.redirect(`${origin}/authed`);

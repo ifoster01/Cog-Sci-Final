@@ -55,7 +55,9 @@ export default function Authed() {
     return (
         <div className="">
             <h1 className="text-2xl 2xl:text-4xl font-bold text-center mt-2 2xl:mt-4">
-                Welcome to the Cognitive Science Quiz App, {user.user_metadata.firstname}!
+                Welcome to the Cognitive Science Quiz App, {
+                    user.app_metadata.provider === "google" ? user.user_metadata.name.split(" ")[0] : user.user_metadata.firstname
+                }!
             </h1>
 
             <Slider props={{ activePage, setActivePage }} />
