@@ -50,12 +50,9 @@ export default function Quizzes({ props }: { props: any }) {
                     <p className="mt-6 text-lg leading-8 text-gray-600">
                         You have completed all the questions! Check your score to see how you're doing or check the leaderboard to see how you stack up against your peers. To keep playing, add more quiz questions under the "add questions" tab.
                     </p>
-                    <p className="mt-6 text-sm leading-8 text-gray-600">
-                        ** Please note: as this is a very new app, if you don't see your new questions, just refresh :) **
-                    </p>
                 </div>
             }
-            {props.quizData && props.quizData.map((quiz: any) => {
+            { props.quizData && props.quizData.map((quiz: any) => {
                 return (
                     <div key={quiz.id} className="relative bg-gray-100 p-4 my-4 rounded-md">
                         <h1 className="text-2xl font-bold">{quiz.question}</h1>
@@ -138,6 +135,9 @@ export default function Quizzes({ props }: { props: any }) {
                     </div>
                 )
             })}
+            <p className="mt-6 text-center text-sm leading-8 text-gray-600">
+                ** Please note: as this is a very new app, if you don't see your new questions, just refresh :) **
+            </p>
             <Toaster />
         </div>
     )

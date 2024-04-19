@@ -41,7 +41,7 @@ export default function Authed() {
     }
 
     if (isLoading) {
-        return <div className="w-full max-w-screen h-screen">
+        return <div className="w-full max-w-screen max-h-screen">
             <Image
                 src={Logo}
                 alt="Cognitive Science Quiz App"
@@ -51,7 +51,6 @@ export default function Authed() {
             />
         </div>
     }
-    console.log(user)
 
     return (
         <div className="">

@@ -78,7 +78,7 @@ export const updateQuiz = async ( user: any, qid: number, correct: boolean ) => 
     });
 }
 
-export const addQuestion = async ( question: string, type: string, a: string, b: string, c: string, d: string, answer: string ) => {
+export const addQuestion = async ( question: string, type: string, a: string, b: string, c: string, d: string, answer: string, added_by: string ) => {
     return new Promise(async (resolve, reject) => {
         try {
             const supabase = createClient();
@@ -110,7 +110,8 @@ export const addQuestion = async ( question: string, type: string, a: string, b:
                     b: type === "choice" ? b : "false",
                     c: type === "choice" ? c : null,
                     d: type === "choice" ? d : null,
-                    answer
+                    answer,
+                    added_by
                 }
             ])
 

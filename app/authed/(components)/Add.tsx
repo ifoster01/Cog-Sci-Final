@@ -17,7 +17,7 @@ export default function Add({ props }: { props: any }) {
 
     const mutation = useMutation({
         mutationFn: async () => {
-            await addQuestion(question, type, a, b, c, d, answer)
+            await addQuestion(question, type, a, b, c, d, answer, props.userData.id)
             
             setQuestion("")
             setA("")
