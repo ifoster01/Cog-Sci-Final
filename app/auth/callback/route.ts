@@ -10,41 +10,44 @@ export async function GET(request: Request) {
   const code = requestUrl.searchParams.get("code");
   const origin = requestUrl.origin;
 
+  const supabase = createClient();
   if (code) {
-    const supabase = createClient();
     await supabase.auth.exchangeCodeForSession(code);
-  }
-  
-  const login = requestUrl.searchParams.get("login");
-
-  if (login === "true") {
-    return NextResponse.redirect(`${origin}/authed`);
   }
 
   // If the user is signing up, create a new user in the database
-  const supabase = createClient();
   const { data: user, error: error2 } = await supabase.auth.getUser();
 
   if (error2) {
     return NextResponse.redirect(`${origin}/login`);
   }
 
-  const { error: error3 } = await supabase
+  const { data: newUser, error: error1 } = await supabase
     .from("users")
-    .insert([{
-      id: user?.user?.id,
-      correct: 0,
-      incorrect: 0,
-      total: 0,
-      question_num: 0,
-      first_name: user?.user?.user_metadata?.full_name?.split(" ")[0],
-      last_name: user?.user?.user_metadata?.full_name?.split(" ")[1]
-  }]);
+    .select("*")
+    .eq("id", user?.user?.id);
 
-  if (error3) {
+  if (error1) {
     return NextResponse.redirect(`${origin}/login`);
   }
 
-  // URL to redirect to after sign up process completes
+  if (newUser?.length === 0) {
+    const { error: error3 } = await supabase
+      .from("users")
+      .insert([{
+        id: user?.user?.id,
+        correct: 0,
+        incorrect: 0,
+        total: 0,
+        question_num: 0,
+        first_name: user?.user?.user_metadata?.full_name?.split(" ")[0],
+        last_name: user?.user?.user_metadata?.full_name?.split(" ")[1]
+    }]);
+
+    if (error3) {
+      return NextResponse.redirect(`${origin}/login`);
+    }
+  }
+
   return NextResponse.redirect(`${origin}/authed`);
 }
