@@ -10,7 +10,7 @@ export default async function Index() {
       {/* Body content */}
       <div className="w-full px-[25%] text-center">
         <div className="mx-auto max-w-2xl text-center">
-            <h2 className="mt-[15%] text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">About Us</h2>
+            <h2 className="mt-[15%] text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">About This Project</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
                 The Cognitive Science Quiz App offers an immersive experience in exploring key concepts of cognitive science through an interactive quiz format. Designed as a one-week coding project, this web-based application presents users with multiple-choice questions covering various topics such as memory, perception, attention, decision-making, and problem-solving.
             </p>

@@ -135,7 +135,7 @@ export default function Quizzes({ props }: { props: any }) {
                     </div>
                 )
             })}
-            <p className="mt-6 text-center text-sm leading-8 text-gray-600">
+            <p className="my-6 text-center text-sm leading-8 text-gray-600">
                 ** Please note: as this is a very new app, if you don't see your new questions, just refresh :) **
             </p>
             <Toaster />
