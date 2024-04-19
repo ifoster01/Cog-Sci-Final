@@ -17,8 +17,6 @@ export default function Quizzes({ props }: { props: any }) {
     const handleUpdate = (qid: number, correct: string) => async (e: any) => {
         e.preventDefault()
 
-        console.log(props.userData.question_num, qid - 1)
-
         if (props.userData.question_num < qid - 1) {
             toast.error("You must complete the previous question first!")
             return

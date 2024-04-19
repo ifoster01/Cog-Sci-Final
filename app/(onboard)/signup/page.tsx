@@ -4,15 +4,37 @@ import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
 import { SubmitButton } from "../submit-button";
 import { PasswordInput } from "../password-input";
+import { GoogleSignIn } from "../google-signup";
 import Image from "next/image";
 
-import Logo from "../../../public/app.jpg"
+import Logo from "@/public/app.jpg"
+import Google from '@/public/google.svg'
 
 export default function SignUp({
   searchParams,
 }: {
   searchParams: { message: string };
 }) {
+  const oAuthSignUp = async () => {
+    "use server";
+
+    const supabase = createClient();
+    const origin = headers().get("origin");
+
+    const { data, error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${origin}/auth/callback?login=false`,
+      },
+    });
+
+    if (error) {
+      return redirect("/login?message=An error occurred! Please try again");
+    }
+    
+    return redirect(data.url);
+  }
+
   const signUp = async (formData: FormData) => {
     "use server";
 
@@ -78,103 +100,121 @@ export default function SignUp({
         Back
       </Link>
 
-      <form className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-          <Link href="/">
-            <Image src={Logo} alt="App Logo" height={100} width={100} className="mx-auto" />
-          </Link>
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
-            Sign up for a free account
-          </h2>
-        </div>
-
-        <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <div>
-              <div className="grid grid-cols-2">
-                <div className="mr-1">
-                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                    First Name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="firstname"
-                      name="firstname"
-                      type="text"
-                      autoComplete="given-name"
-                      required
-                      className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-                <div className="ml-1">
-                  <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                    Last Name
-                  </label>
-                  <div className="mt-2">
-                    <input
-                      id="lastname"
-                      name="lastname"
-                      type="text"
-                      autoComplete="family-name"
-                      required
-                      className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-6">
-                Email address
-              </label>
-              <div className="mt-2">
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  autoComplete="email"
-                  required
-                  className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-            <div>
-              <div className="flex items-center justify-between mt-6">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                  Password
-                </label>
-              </div>
-              <PasswordInput />
-              <div className="flex items-center justify-between mt-6">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                  Confirm Password
-                </label>
-              </div>
-              <PasswordInput />
-            </div>
-
-            <div>
-              <SubmitButton
-                formAction={signUp}
-                className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2 w-full mt-8 hover:bg-gray-50"
-                pendingText="Signing Up..."
-              >
-                Sign Up
-              </SubmitButton>
-            </div>
-
-          <p className="mt-10 text-center text-sm text-gray-500">
-            Already have an accout?{' '}
-            <Link href="/login" className="font-semibold leading-6 text-black hover:text-gray-700">
-              Sign in
+      <div className="animate-in flex-1 flex flex-col w-full justify-center gap-2 text-foreground">
+        {/* Google sign up */}
+        <form>
+          <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+            <Link href="/">
+              <Image src={Logo} alt="App Logo" height={100} width={100} className="mx-auto" />
             </Link>
-          </p>
+            <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+              Sign up for a free account
+            </h2>
+          </div>
+          <SubmitButton
+            formAction={oAuthSignUp}
+            className="bg-red-500 flex justify-center items-center rounded-md px-4 py-2 text-foreground mb-2 w-full text-white mt-4"
+            pendingText="Signing In..."
+          >
+            <Image src={Google} alt="Google Logo" className="w-5 h-5 mr-2" />
+            Sign up with google  
+          </SubmitButton>
+        </form>
+        <div className="flex items-center">
+          <div className="h-[1px] bg-gray-400 w-full" />
+          <p className="text-center text-gray-500 mx-2">or</p>
+          <div className="h-[1px] bg-gray-400 w-full" />
         </div>
-        {searchParams?.message && (
-          <p className="mt-4 p-4 bg-foreground/10 text-red-500 text-foreground text-center">
-            {searchParams.message}
-          </p>
-        )}
-      </form>
+        {/* Credentials sign up */}
+        <form>
+          <div className="mt-4 sm:mx-auto sm:w-full sm:max-w-sm">
+              <div>
+                <div className="grid grid-cols-2">
+                  <div className="mr-1">
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                      First Name
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="firstname"
+                        name="firstname"
+                        type="text"
+                        autoComplete="given-name"
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="ml-1">
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                      Last Name
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        id="lastname"
+                        name="lastname"
+                        type="text"
+                        autoComplete="family-name"
+                        required
+                        className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 mt-6">
+                  Email address
+                </label>
+                <div className="mt-2">
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    autoComplete="email"
+                    required
+                    className="block w-full rounded-md border-0 py-1.5 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+                  />
+                </div>
+              </div>
+              <div>
+                <div className="flex items-center justify-between mt-6">
+                  <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                    Password
+                  </label>
+                </div>
+                <PasswordInput />
+                <div className="flex items-center justify-between mt-6">
+                  <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                    Confirm Password
+                  </label>
+                </div>
+                <PasswordInput />
+              </div>
+
+              <div>
+                <SubmitButton
+                  formAction={signUp}
+                  className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2 w-full mt-8 hover:bg-gray-50"
+                  pendingText="Signing Up..."
+                >
+                  Sign Up
+                </SubmitButton>
+              </div>
+
+            <p className="mt-10 text-center text-sm text-gray-500">
+              Already have an accout?{' '}
+              <Link href="/login" className="font-semibold leading-6 text-black hover:text-gray-700">
+                Sign in
+              </Link>
+            </p>
+          </div>
+          {searchParams?.message && (
+            <p className="mt-4 p-4 bg-foreground/10 text-red-500 text-foreground text-center">
+              {searchParams.message}
+            </p>
+          )}
+        </form>
+      </div>
     </div>
   );
 }

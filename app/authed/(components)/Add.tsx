@@ -224,6 +224,9 @@ export default function Add({ props }: { props: any }) {
                     Add Question
                 </button>
             </form>
+            <p className="my-6 text-center text-sm text-gray-600">
+                ** questions will be added to the end of the quiz **
+            </p>
 
             <Toaster />
         </div>

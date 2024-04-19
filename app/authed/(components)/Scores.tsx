@@ -43,12 +43,12 @@ function Chart({ pieData }: { pieData: any }) {
 
 export default function Scores({ props }: { props: any }) {
     const correctData = [
-        { name: 'correctbg', value: (props.userData.incorrect / props.userData.total) * 100 },
-        { name: 'correct', value: (props.userData.correct / props.userData.total) * 100 },
+        { name: 'correctbg', value: props.userData.total === 0 ? 100 : (props.userData.incorrect / props.userData.total) * 100 },
+        { name: 'correct', value: props.userData.total === 0 ? 0 : (props.userData.correct / props.userData.total) * 100 },
     ]
     const incorrectData = [
-        { name: 'incorrectbg', value: (props.userData.correct / props.userData.total) * 100 },
-        { name: 'incorrect', value: (props.userData.incorrect / props.userData.total) * 100 },
+        { name: 'incorrectbg', value: props.userData.total === 0 ? 100 : (props.userData.correct / props.userData.total) * 100 },
+        { name: 'incorrect', value: props.userData.total === 0 ? 0 : (props.userData.incorrect / props.userData.total) * 100 },
     ]
 
     return (
