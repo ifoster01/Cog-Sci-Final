@@ -47,7 +47,7 @@ export default function Authed() {
                 alt="Cognitive Science Quiz App"
                 width={200}
                 height={200}
-                className="animate-bounce mx-auto mt-[10%]"
+                className="animate-bounce mx-auto mt-[20%] sm:mt-[10%]"
             />
         </div>
     }
