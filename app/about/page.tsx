@@ -5,11 +5,32 @@ import Header from '../../components/Header';
 export default async function Index() {
   return (
     <div className="w-full max-w-screen h-screen">
+      <Link
+        href="/"
+        className="absolute left-8 top-24 py-2 px-4 rounded-md no-underline text-foreground bg-btn-background hover:bg-btn-background-hover flex items-center group text-sm"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1"
+        >
+          <polyline points="15 18 9 12 15 6" />
+        </svg>{" "}
+        Back
+      </Link>
+
       <Header user={null} />
 
       {/* Body content */}
-      <div className="w-full px-[25%] text-center">
-        <div className="mx-auto max-w-2xl text-center">
+      <div className="w-full px-[5%] sm:px-[25%] mb-8 sm:mb-0 text-center">
+        <div className="mx-auto text-center">
             <h2 className="mt-[15%] text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">About This Project</h2>
             <p className="mt-6 text-lg leading-8 text-gray-600">
                 The Cognitive Science Quiz App offers an immersive experience in exploring key concepts of cognitive science through an interactive quiz format. Designed as a one-week coding project, this web-based application presents users with multiple-choice questions covering various topics such as memory, perception, attention, decision-making, and problem-solving.

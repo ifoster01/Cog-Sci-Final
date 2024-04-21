@@ -28,11 +28,11 @@ The development of the Cognitive Science Quiz App involves basic web development
 
 ## Timeline
 
-- **Days 1-2:** Planning and design phase, including brainstorming quiz questions and sketching app interface.
+- **Phase 1:** Planning and design phase, including brainstorming quiz questions and sketching app interface.
   
-- **Days 3-5:** Development phase, building the quiz app using Next.js and populating it with quiz questions.
+- **Phase 2:** Development phase, building the quiz app using Next.js and populating it with quiz questions.
   
-- **Days 6-7:** Testing phase, debugging code, finalizing app features, and recording walkthrough video.
+- **Phase 3:** Testing phase, debugging code, finalizing app features, and recording walkthrough video.
 
 ## Resources
 

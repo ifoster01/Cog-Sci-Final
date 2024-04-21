@@ -18,7 +18,7 @@ export default function Header({ user }: { user: any }) {
     }
 
     return (
-        <header className="w-full max-w-screen flex justify-between px-12 2xl:px-20 items-center">
+        <header className="w-full max-w-screen flex justify-between px-4 sm:px-12 2xl:px-20 items-center">
             <Link href="/" className="flex items-center space-x-2">
                 <Image src={Logo} alt="Logo" width={75} height={75} />
             </Link>

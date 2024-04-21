@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 
 import { AuthWrapper } from "./AuthContext";
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export default async function AuthLayout({
   children,
@@ -20,12 +21,16 @@ export default async function AuthLayout({
   }
 
   return (
-    <div className="flex-1 w-full flex flex-col items-center">
+    <div className="w-full flex flex-col justify-between h-screen items-center">
       <Header user={user} />
 
-      <AuthWrapper user={user}>
-        {user && children}
-      </AuthWrapper>
+      <div className="mb-auto w-full">
+        <AuthWrapper user={user}>
+          {user && children}
+        </AuthWrapper>
+      </div>
+
+      <Footer />
     </div>
   );
 }

@@ -53,7 +53,7 @@ export default function Quizzes({ props }: { props: any }) {
             { props.quizData && props.quizData.map((quiz: any) => {
                 return (
                     <div key={quiz.id} className="relative bg-gray-100 p-4 my-4 rounded-md">
-                        <h1 className="text-2xl font-bold">{quiz.question}</h1>
+                        <h1 className="mb-2 sm:mb-0 sm:text-2xl font-bold">{quiz.question}</h1>
                         <form onSubmit={handleUpdate(quiz.id, quiz.answer)}>
                             { quiz.type === "choice" &&
                             <>
@@ -123,12 +123,15 @@ export default function Quizzes({ props }: { props: any }) {
                                 </div>
                             </>
                             }
-                            <button
-                                type="submit"
-                                className="absolute bottom-4 right-4 bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-md mt-2"
-                            >
-                                Submit
-                            </button>
+                            <div className={`w-full ${quiz.type === 'tf' ? '' : 'sm:text-right'}`}>
+                                <button
+                                    type="submit"
+                                    className={`w-full sm:w-auto bg-green-500 hover:bg-green-400 text-white sm:px-4 py-2 rounded-md mt-2 ${quiz.type === 'tf' ? 'sm:absolute sm:bottom-4 sm:right-4' : ''}`}
+                                >
+                                    Submit
+                                </button>
+
+                            </div>
                         </form>
                     </div>
                 )
@@ -136,6 +139,8 @@ export default function Quizzes({ props }: { props: any }) {
             <p className="my-6 text-center text-sm leading-8 text-gray-600">
                 ** Please note: as this is a very new app, if you don't see your new questions, just refresh :) **
             </p>
+
+            
             <Toaster />
         </div>
     )
