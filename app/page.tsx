@@ -13,7 +13,7 @@ export default async function Index() {
         <h2 className="text-lg sm:text-2xl">
           The Cognitive Science Quiz App offers an immersive experience in exploring key concepts of cognitive science through an interactive quiz format
         </h2>
-        <div className="flex flex-col sm:flex-row sm:justify-center space-y-2 sm:space-x-6 mt-8">
+        <div className="flex flex-col sm:flex-row sm:justify-center space-y-2 sm:space-y-0 sm:space-x-6 mt-8">
           <Link href='/signup' className="text-nowrap text-sm sm:text-base font-extralight text-white bg-green-500 px-4 py-4 rounded-sm cursor-pointer hover:bg-green-400">
             Sign up to get started!
           </Link>
