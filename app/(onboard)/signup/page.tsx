@@ -5,7 +5,7 @@ import { SubmitButton } from "../submit-button";
 import { PasswordInput } from "../password-input";
 import Image from "next/image";
 
-import Logo from "@/public/app.jpg"
+import Logo from "@/public/app.svg"
 import Google from '@/public/google.svg'
 
 export default function SignUp({
@@ -28,7 +28,7 @@ export default function SignUp({
     if (error) {
       return redirect("/login?message=An error occurred! Please try again");
     }
-    
+
     return redirect(data.url);
   }
 

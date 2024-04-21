@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import Logout from './logout-action';
 
-import Logo from '../public/app.jpg';
+import Logo from '../public/app.svg';
 import {
     ArrowRightIcon
 } from '@heroicons/react/20/solid';

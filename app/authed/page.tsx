@@ -12,7 +12,7 @@ import Quizzes from "./(components)/Quizzes"
 import Scores from "./(components)/Scores"
 import Leaderboard from "./(components)/Leaderboard"
 // assets
-import Logo from "@/public/app.jpg"
+import Logo from "@/public/app.svg"
 
 export default function Authed() {
     const user = useSessionStore((state) => state.session);

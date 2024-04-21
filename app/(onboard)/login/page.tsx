@@ -6,7 +6,7 @@ import { PasswordInput } from "../password-input";
 import { headers } from "next/headers";
 import Image from "next/image";
 
-import Logo from "@/public/app.jpg"
+import Logo from "@/public/app.svg"
 import Google from '@/public/google.svg'
 
 export default function Login({
