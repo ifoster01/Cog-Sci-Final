@@ -123,12 +123,15 @@ export default function Quizzes({ props }: { props: any }) {
                                 </div>
                             </>
                             }
-                            <button
-                                type="submit"
-                                className="w-full sm:w-auto sm:absolute sm:bottom-4 sm:right-4 bg-green-500 hover:bg-green-400 text-white sm:px-4 py-2 rounded-md mt-2"
-                            >
-                                Submit
-                            </button>
+                            <div className={`w-full ${quiz.type === 'tf' ? '' : 'sm:text-right'}`}>
+                                <button
+                                    type="submit"
+                                    className={`w-full sm:w-auto bg-green-500 hover:bg-green-400 text-white sm:px-4 py-2 rounded-md mt-2 ${quiz.type === 'tf' ? 'sm:absolute sm:bottom-4 sm:right-4' : ''}`}
+                                >
+                                    Submit
+                                </button>
+
+                            </div>
                         </form>
                     </div>
                 )
@@ -136,6 +139,8 @@ export default function Quizzes({ props }: { props: any }) {
             <p className="my-6 text-center text-sm leading-8 text-gray-600">
                 ** Please note: as this is a very new app, if you don't see your new questions, just refresh :) **
             </p>
+
+            
             <Toaster />
         </div>
     )

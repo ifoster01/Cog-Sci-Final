@@ -1,14 +1,15 @@
 import Link from 'next/link';
 
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default async function Index() {
   return (
-    <div className="max-w-screen h-screen">
+    <div className="max-w-screen h-screen flex flex-col justify-between">
       <Header user={null} />
 
       {/* Body content */}
-      <div className="w-full px-[25%] text-center">
+      <div className="w-full px-[25%] text-center mb-auto">
         <h1 className="mt-[20%] sm:mt-[10%] 2xl:mt-[25%] mb-8 text-2xl xl:text-6xl font-bold">Welcome to the<br/><span className="bg-gradient-to-r from-blue-600 via-green-500 to-indigo-400 inline-block text-transparent bg-clip-text">Cognitive Science Quiz App</span></h1>
         <h2 className="text-lg sm:text-2xl">
           The Cognitive Science Quiz App offers an immersive experience in exploring key concepts of cognitive science through an interactive quiz format
@@ -22,6 +23,8 @@ export default async function Index() {
           </Link>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }
