@@ -53,7 +53,7 @@ export default function Quizzes({ props }: { props: any }) {
             { props.quizData && props.quizData.map((quiz: any) => {
                 return (
                     <div key={quiz.id} className="relative bg-gray-100 p-4 my-4 rounded-md">
-                        <h1 className="text-2xl font-bold">{quiz.question}</h1>
+                        <h1 className="mb-2 sm:mb-0 sm:text-2xl font-bold">{quiz.question}</h1>
                         <form onSubmit={handleUpdate(quiz.id, quiz.answer)}>
                             { quiz.type === "choice" &&
                             <>
@@ -125,7 +125,7 @@ export default function Quizzes({ props }: { props: any }) {
                             }
                             <button
                                 type="submit"
-                                className="absolute bottom-4 right-4 bg-green-500 hover:bg-green-400 text-white px-4 py-2 rounded-md mt-2"
+                                className="w-full sm:w-auto sm:absolute sm:bottom-4 sm:right-4 bg-green-500 hover:bg-green-400 text-white sm:px-4 py-2 rounded-md mt-2"
                             >
                                 Submit
                             </button>

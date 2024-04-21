@@ -43,7 +43,7 @@ export default function Add({ props }: { props: any }) {
         <div className="w-[80%] mx-auto relative pt-10">
             <h1 className="text-2xl font-bold">Add Questions</h1>
             <form onSubmit={postQuestion}>
-                <div className="grid grid-cols-2 mt-4 text-right">
+                <div className="grid sm:grid-cols-2 space-y-4 sm:space-y-0 mt-4 sm:text-right">
                     <div className="flex items-center">
                         <h2 className="text-xl font-semibold">Question:</h2>
                         <input
@@ -56,11 +56,11 @@ export default function Add({ props }: { props: any }) {
                         />
                     </div>
                     <div>
-                        <label htmlFor="type-select" className="mr-2">Select question type you'd like to add:</label>
+                        <label htmlFor="type-select" className="sm:mr-2">Select question type you'd like to add:</label>
                         <select
                             name="qtype"
                             id="type-select"
-                            className="p-1 rounded-md"
+                            className="mt-2 sm:mt-0 p-1 rounded-md w-full sm:w-auto"
                             onChange={(e) => setType(e.target.value)}
                             required
                         >
@@ -220,7 +220,7 @@ export default function Add({ props }: { props: any }) {
                     </div>
                 </>
                 }
-                <button type="submit" className="mt-6 bg-blue-500 text-white p-2 rounded-md">
+                <button type="submit" className="w-full sm:w-auto mt-6 bg-blue-500 text-white p-2 rounded-md">
                     Add Question
                 </button>
             </form>
